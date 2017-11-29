@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchSurveys, removeSurveys } from "../../actions";
-import { withRouter } from "react-router-dom";
+import * as actions from "../../actions";
+//import { withRouter } from "react-router-dom";
 
 class SurveyList extends Component {
   componentDidMount() {
@@ -18,7 +18,7 @@ class SurveyList extends Component {
               <button
                 className="btn red right white-text"
                 onClick={() =>
-                  this.props.removeSurveys(survey._id, this.props.history)
+                  this.props.removeSurveys({ surveyId: survey._id })
                 }
               >
                 Remove
@@ -48,6 +48,7 @@ function mapStateToProps({ surveys }) {
   return { surveys };
 }
 
-export default connect(mapStateToProps, { fetchSurveys, removeSurveys })(
-  withRouter(SurveyList)
+export default connect(mapStateToProps, actions)(
+  //withRouter(SurveyList)
+  SurveyList
 );
