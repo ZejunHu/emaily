@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 import Header from "./Header";
@@ -18,7 +18,13 @@ class App extends Component {
         <BrowserRouter>
           <div className="container">
             <Header />
-            <Route exact path="/" component={Landing} />
+            <Route
+              exact
+              path="/"
+              render={() =>
+                this.props.auth ? <Redirect to="/surveys" /> : <Landing />
+              }
+            />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
           </div>
@@ -28,4 +34,8 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps, actions)(App);
