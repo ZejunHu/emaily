@@ -19,6 +19,9 @@ class Header extends Component {
           <li key="1">
             <Payments />
           </li>,
+          <li key="4" style={{ margin: "0 10px" }}>
+            {this.props.auth.displayName}
+          </li>,
           <li key="3" style={{ margin: "0 10px" }}>
             Credits: {this.props.auth.credits}
           </li>,

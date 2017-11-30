@@ -47,7 +47,7 @@ function validate(values) {
   errors.sender = validateSenderEmail(values.sender || "");
 
   _.each(formFields, ({ name }) => {
-    if (!values[name] && name != "sender") {
+    if (!values[name] && name !== "sender") {
       errors[name] = `You must provide ${
         name === "recipients" ? "recipients" : "a " + name
       }`;
