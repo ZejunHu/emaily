@@ -4,7 +4,8 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import { Link } from "react-router-dom";
 import SurveyField from "./SurveyField";
-import validateEmails from "../../utils/validateEmails";
+import validateEmailList from "../../utils/validateEmailList";
+import validateSenderEmail from "../../utils/validateSenderEmail";
 import formFields from "./formFields";
 
 class SurveyForm extends Component {
@@ -42,11 +43,14 @@ class SurveyForm extends Component {
 function validate(values) {
   const errors = {};
 
-  errors.recipients = validateEmails(values.recipients || "");
+  errors.recipients = validateEmailList(values.recipients || "");
+  errors.sender = validateSenderEmail(values.sender || "");
 
   _.each(formFields, ({ name }) => {
-    if (!values[name]) {
-      errors[name] = `You must provide a ${name}`;
+    if (!values[name] && name != "sender") {
+      errors[name] = `You must provide ${
+        name === "recipients" ? "recipients" : "a " + name
+      }`;
     }
   });
 
