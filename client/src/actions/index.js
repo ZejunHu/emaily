@@ -21,7 +21,7 @@ export const submitSurvey = (values, history) => async dispatch => {
     history.push("/surveys");
     dispatch({ type: FETCH_USER, payload: res.data });
   } catch (err) {
-    Materialize.toast("No Enough Credits!", 4000);
+    Materialize.toast("No Enough Credits!", 4000, "red white-text flow-text");
   }
 };
 

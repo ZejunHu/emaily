@@ -11,7 +11,11 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
     return (
       <div key={name}>
         <label>{label}</label>
-        <div>{formValues[name] ? formValues[name] : "no-reply@emaily.com"}</div>
+        <div>
+          {name === "sender" && !formValues[name]
+            ? "no-reply@emaily.com"
+            : formValues[name]}
+        </div>
       </div>
     );
   });
