@@ -43,7 +43,7 @@ class SurveyList extends Component {
   renderSortButton() {
     return _.map(sortType, ({ name }) => {
       return (
-        <p className="col m3 s4" key={name}>
+        <p className="col l3 m4 s12" key={name}>
           <input
             name="sort"
             type="radio"
@@ -95,7 +95,7 @@ class SurveyList extends Component {
         <div className="row" style={{ margin: "10px 0 5px 0" }}>
           <div>
             <label style={{ margin: "0 0 0 15px" }}>
-              <i className="material-icons">sort</i>Sort By
+              <i className="material-icons">sort</i>Surveys Sort By
             </label>
           </div>
           {this.renderSortButton()}
