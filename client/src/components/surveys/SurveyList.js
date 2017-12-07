@@ -1,7 +1,8 @@
+import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
-//import { withRouter } from "react-router-dom";
+import sortType from "../sortType";
 
 class SurveyList extends Component {
   componentDidMount() {
@@ -37,6 +38,24 @@ class SurveyList extends Component {
       default:
         return surveys;
     }
+  }
+
+  renderSortButton() {
+    return _.map(sortType, ({ name }) => {
+      return (
+        <p className="col m3 s4" key={name}>
+          <input
+            name="sort"
+            type="radio"
+            id={name}
+            onClick={() => {
+              this.props.sortSurveys(name);
+            }}
+          />
+          <label htmlFor={name}>{name}</label>
+        </p>
+      );
+    });
   }
 
   renderSurveys() {
@@ -79,43 +98,10 @@ class SurveyList extends Component {
               <i className="material-icons">sort</i>Sort By
             </label>
           </div>
-          <p className="col m3 s4">
-            <input
-              name="sort"
-              type="radio"
-              id="Latest Release"
-              onClick={() => {
-                this.props.sortSurveys("Latest Release");
-              }}
-            />
-            <label htmlFor="Latest Release">Latest Release</label>
-          </p>
-          <p className="col m3 s4">
-            <input
-              name="sort"
-              type="radio"
-              id="Title Name"
-              onClick={() => {
-                this.props.sortSurveys("Title Name");
-              }}
-            />
-            <label htmlFor="Title Name">Title Name</label>
-          </p>
-          <p className="col m3 s4">
-            <input
-              name="sort"
-              type="radio"
-              id="Most Reply"
-              onClick={() => {
-                this.props.sortSurveys("Most Reply");
-              }}
-            />
-            <label htmlFor="Most Reply">Most Reply</label>
-          </p>
+          {this.renderSortButton()}
         </div>
+        <div />
         <div>{this.renderSurveys()}</div>
-        {console.log(this.props.sort)}
-        {console.log(this.props.surveys)}
       </div>
     );
   }
