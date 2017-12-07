@@ -1,6 +1,6 @@
 import axios from "axios";
 import Materialize from "materialize-css";
-import { FETCH_USER, FETCH_SURVEYS } from "./types";
+import { FETCH_USER, FETCH_SURVEYS, SORT_SURVEYS } from "./types";
 
 export const fetchUser = () => async dispatch => {
   const res = await axios.get("/api/current_user");
@@ -35,4 +35,8 @@ export const removeSurveys = values => async dispatch => {
   const res = await axios.post("/api/surveys/remove", values);
 
   dispatch({ type: FETCH_SURVEYS, payload: res.data });
+};
+
+export const sortSurveys = values => dispatch => {
+  dispatch({ type: SORT_SURVEYS, payload: values });
 };
