@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import DropdownMenu from "./DropdownMenu";
+import ProfileMenu from "./dropdown/ProfileMenu";
+import LoginMenu from "./dropdown/LoginMenu";
 
 class Header extends Component {
   renderContent() {
@@ -9,15 +10,15 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return (
-          <li>
-            <a href="/auth/google">Login With Google</a>
+        return [
+          <li key="1">
+            <LoginMenu />
           </li>
-        );
+        ];
       default:
         return (
           <li key="2">
-            <DropdownMenu />
+            <ProfileMenu />
           </li>
         );
     }

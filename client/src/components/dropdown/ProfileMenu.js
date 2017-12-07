@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Dropdown, Button, NavItem } from "react-materialize";
 import { connect } from "react-redux";
-import Payments from "./Payments";
+import Payments from "../Payments";
 
-class DropdownMenu extends Component {
+class ProfileMenu extends Component {
   render() {
     return (
       <Dropdown
@@ -25,4 +25,4 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps)(DropdownMenu);
+export default connect(mapStateToProps)(ProfileMenu);
