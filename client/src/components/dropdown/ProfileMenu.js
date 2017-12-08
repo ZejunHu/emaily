@@ -7,8 +7,15 @@ class ProfileMenu extends Component {
   render() {
     return (
       <Dropdown
-        style={{ margin: "36px 0 0 0" }}
-        trigger={<Button>{this.props.auth.displayName}</Button>}
+        style={{ margin: "60px 0 0 0" }}
+        trigger={
+          <li>
+            <a className="dropdown-button" href="#!">
+              {this.props.auth.displayName}
+              <i className="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+        }
       >
         <NavItem href="#!">Credits: {this.props.auth.credits}</NavItem>
         <NavItem href="#!">
