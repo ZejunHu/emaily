@@ -10,11 +10,11 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return [
+        return (
           <li key="1">
             <LoginMenu />
           </li>
-        ];
+        );
       default:
         return (
           <li key="2">

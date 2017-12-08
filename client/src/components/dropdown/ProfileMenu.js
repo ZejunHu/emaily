@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dropdown, Button, NavItem } from "react-materialize";
+import { Dropdown, NavItem } from "react-materialize";
 import { connect } from "react-redux";
 import Payments from "../Payments";
 
@@ -9,12 +9,10 @@ class ProfileMenu extends Component {
       <Dropdown
         style={{ margin: "60px 0 0 0" }}
         trigger={
-          <li>
-            <a className="dropdown-button" href="#!">
-              {this.props.auth.displayName}
-              <i className="material-icons right">arrow_drop_down</i>
-            </a>
-          </li>
+          <a className="dropdown-button" href="#!">
+            {this.props.auth.displayName}
+            <i className="material-icons right">arrow_drop_down</i>
+          </a>
         }
       >
         <NavItem href="#!">Credits: {this.props.auth.credits}</NavItem>

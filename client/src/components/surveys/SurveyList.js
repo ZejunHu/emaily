@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actions from "../../actions";
 import sortType from "../sortType";
+import emptyBox from "../../icons/empty-mailbox-edit.png";
 
 class SurveyList extends Component {
   componentDidMount() {
@@ -59,6 +60,18 @@ class SurveyList extends Component {
   }
 
   renderSurveys() {
+    if (this.props.surveys.length === 0) {
+      return (
+        <div className="unselectable" style={{ textAlign: "center" }}>
+          <h3 className="grey-text text-lighten-3">Survey List is Empty</h3>
+          <img
+            src={emptyBox}
+            alt="empty survey list"
+            style={{ marginTop: "50px" }}
+          />
+        </div>
+      );
+    }
     return this.sortBy(this.props.surveys, this.props.sort).map(survey => {
       return (
         <div className="card darken-1" key={survey._id}>
