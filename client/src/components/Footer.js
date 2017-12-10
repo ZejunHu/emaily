@@ -2,15 +2,26 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="page-footer">
+    <footer className="page-footer light-blue darken-4">
       <div className="container">
         <div className="row">
           <div className="col l6 s12">
             <h5 className="white-text">Thank you for using emaily!</h5>
             <div className="grey-text text-lighten-4">
-              <p>Instructor:</p> <p>Stephen Grider</p>
-              <p>Contributor:</p> <p>Jonathan Hu</p>
-              <p>Bill Duan</p>
+              <div className="row">
+                <p className="col m3 s6">
+                  <span>
+                    <strong>Contributor:</strong>
+                  </span>
+                </p>
+                <p className="col m3 s6">
+                  <span>Jonathan Hu</span>
+                </p>
+                <p className="col m3 s6">
+                  <span>Bill Duan</span>
+                </p>
+              </div>
+              <p>Thanks for Stephen&apos;s instruction</p>
             </div>
           </div>
           <div className="col l4 offset-l2 s12">
