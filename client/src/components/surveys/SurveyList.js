@@ -79,7 +79,7 @@ class SurveyList extends Component {
             <span className="card-title">
               {survey.title}
               <button
-                className="btn-floating btn-large waves-effect waves-light red right white-text"
+                className="btn-floating waves-effect waves-light red right white-text"
                 onClick={() =>
                   this.props.removeSurveys({ surveyId: survey._id })
                 }
