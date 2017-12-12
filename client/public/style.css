@@ -13,3 +13,13 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1 0 auto;
+}

@@ -9,7 +9,7 @@ const Dashboard = () => {
       <div className="fixed-action-btn">
         <Link
           to="/surveys/new"
-          className="btn-floating btn-large light-blue darken-4"
+          className="btn-floating btn-large blue waves-effect waves-light"
         >
           <i className="material-icons">add</i>
         </Link>

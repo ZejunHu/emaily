@@ -32,6 +32,7 @@ const Footer = () => {
                   className="grey-text text-lighten-3"
                   href="https://github.com/ZejunHu"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-github" style={{ marginRight: "5px" }} />
                   Github
@@ -42,6 +43,7 @@ const Footer = () => {
                   className="grey-text text-lighten-3"
                   href="https://www.linkedin.com/in/jonathan-hu-b10767129/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i
                     className="fa fa-linkedin-square"
@@ -55,6 +57,7 @@ const Footer = () => {
                   className="grey-text text-lighten-3"
                   href="https://twitter.com/hzj1227"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-twitter" style={{ marginRight: "5px" }} />
                   Twitter
@@ -65,6 +68,7 @@ const Footer = () => {
                   className="grey-text text-lighten-3"
                   href="https://codepen.io/hzj1227/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-codepen" style={{ marginRight: "5px" }} />
                   Codepen

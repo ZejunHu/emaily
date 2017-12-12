@@ -1,6 +1,7 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Modal } from "react-materialize";
 import * as actions from "../../actions";
 import sortType from "../sortType";
 import emptyBox from "../../icons/empty-mailbox-edit.png";
@@ -67,7 +68,7 @@ class SurveyList extends Component {
           <img
             src={emptyBox}
             alt="empty survey list"
-            style={{ marginTop: "50px" }}
+            style={{ margin: "50px 0" }}
           />
         </div>
       );
@@ -78,14 +79,38 @@ class SurveyList extends Component {
           <div className="card-content">
             <span className="card-title">
               {survey.title}
-              <button
-                className="btn-floating waves-effect waves-light red right white-text"
-                onClick={() =>
-                  this.props.removeSurveys({ surveyId: survey._id })
+              <Modal
+                header={`Delete Survey ${survey.title} ?`}
+                trigger={
+                  <button className="btn-floating red right white-text">
+                    <i className="fa fa-trash-o right" />
+                  </button>
+                }
+                actions={
+                  <div>
+                    <button
+                      className="btn modal-action modal-close red darken-2"
+                      style={{ margin: "0 5px" }}
+                      onClick={() =>
+                        this.props.removeSurveys({ surveyId: survey._id })
+                      }
+                    >
+                      remove
+                    </button>
+                    <button
+                      className="btn modal-close grey"
+                      style={{ margin: "0 5px" }}
+                    >
+                      dismiss
+                    </button>
+                  </div>
                 }
               >
-                <i className="fa fa-trash-o right" />
-              </button>
+                <p>
+                  Once you remove a survey, there is no going back. Please be
+                  certain.
+                </p>
+              </Modal>
             </span>
             <p>{survey.body}</p>
             <p className="right">
@@ -113,7 +138,17 @@ class SurveyList extends Component {
           {this.renderSortButton()}
         </div>
         <div />
-        <div>{this.renderSurveys()}</div>
+        <div
+          style={{
+            marginBottom: `${
+              this.props.surveys.length < 3 && this.props.surveys.length !== 0
+                ? 200 * (3 - this.props.surveys.length)
+                : 50
+            }px`
+          }}
+        >
+          {this.renderSurveys()}
+        </div>
       </div>
     );
   }

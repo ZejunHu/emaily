@@ -10,8 +10,12 @@ const Landing = () => {
       <div className="section blue darken-3">
         <div className="row container white-text">
           <h2 className="header">Emaily!</h2>
-          <p className="text-darken-3 lighten-3 flow-text">
+          <h4 className="text-darken-3 lighten-3 flow-text">
             Collect feedback from your users
+          </h4>
+          <p>
+            Alpha Version: Use credit card 4242 4242 4242 4242 with random email
+            and other information to add credits
           </p>
         </div>
       </div>

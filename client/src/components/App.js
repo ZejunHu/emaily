@@ -16,17 +16,21 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <Header />
-          <Route
-            exact
-            path="/"
-            render={() =>
-              this.props.auth ? <Redirect to="/surveys" /> : <Landing />
-            }
-          />
-          <Route exact path="/surveys" component={Dashboard} />
-          <Route path="/surveys/new" component={SurveyNew} />
+        <div className="Site">
+          <div className="Site-content">
+            <Header />
+            <div className="main">
+              <Route
+                exact
+                path="/"
+                render={() =>
+                  this.props.auth ? <Redirect to="/surveys" /> : <Landing />
+                }
+              />
+              <Route exact path="/surveys" component={Dashboard} />
+              <Route path="/surveys/new" component={SurveyNew} />
+            </div>
+          </div>
           <Footer />
         </div>
       </BrowserRouter>
