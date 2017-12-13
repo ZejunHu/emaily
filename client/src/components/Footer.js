@@ -79,7 +79,12 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-copyright">
-        <div className="container">© 2017 Copyright Text</div>
+        <div className="container">
+          © 2017 Copyright
+          <span className="grey-text text-lighten-4 right" href="#!">
+            jonathanzejunhu@gmail.com
+          </span>
+        </div>
       </div>
     </footer>
   );
