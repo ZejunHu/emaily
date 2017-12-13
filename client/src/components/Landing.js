@@ -17,6 +17,11 @@ const Landing = () => {
             Alpha Version: Use credit card 4242 4242 4242 4242 with random email
             and other information to add credits
           </p>
+          <p>
+            We use free server, database and email helper, so the results of
+            "yes" and "no" of every survey may change very slowly after you
+            clicking the link in every email.
+          </p>
         </div>
       </div>
       <Parallax imageSrc={firstIMG} />
