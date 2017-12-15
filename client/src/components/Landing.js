@@ -14,13 +14,14 @@ const Landing = () => {
             Collect feedback from your users
           </h4>
           <p>
-            Alpha Version: Use credit card 4242 4242 4242 4242 with random email
-            and other information to add credits
+            Because it is just a test mode stripe, so you can use credit card
+            number 4242 4242 4242 4242 to add credits under user&apos;s dropdown
+            menu.
           </p>
           <p>
-            We use free server, database and email helper, so the results of
-            "yes" and "no" of every survey may change very slowly after you
-            clicking the link in every email.
+            We use free server, database and email helper, so the statistical
+            data of every survey may response after very long time you clicking
+            the link in received email.
           </p>
         </div>
       </div>
